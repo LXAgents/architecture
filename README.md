@@ -17,6 +17,20 @@ This repository is dedicated to storing and explaining the system logic and stru
 - **State Independence & Data Persistence:** The Center Server acts exclusively as a routing gateway and does not retain or store any data. Consequently, each connected platform must implement and manage its own logic for data saving, memory, and state persistence locally.
 - **Fail-Safe Routing:** The central system includes auto-retry logic and dynamic endpoint switching to automatically handle provider limits or errors without interrupting the user experience.
 
+## 🔀 Supported Agent Modalities
+
+The central routing system is capable of handling 9 types of agent modalities. Click on each modality below for detailed specifications and routing logic:
+
+- [Text](./wiki/model/text.md)
+- [Image](./wiki/model/image.md)
+- [Video](./wiki/model/video.md)
+- [Speech](./wiki/model/speech.md)
+- [Decisions](./wiki/model/decisions.md)
+- [Embeddings](./wiki/model/embeddings.md)
+- [Rerank](./wiki/model/rerank.md)
+- [Transcription](./wiki/model/transcription.md)
+- [Audio](./wiki/model/audio.md)
+
 ## 📚 Directory Index
 
 - [AGENTS.md](./AGENTS.md) - **Read this first!** Guidelines and rules for creating new documentation files in this repository.
