@@ -12,8 +12,9 @@ This repository is dedicated to storing and explaining the system logic and stru
 
 - **Primary Router (OpenRouter):** OpenRouter currently serves as the core API and routing system for managing agent models across various modalities (text, image, decisions, etc.).
 - **Router Agnosticism:** The architecture is highly modular. We can seamlessly swap out OpenRouter for another provider or platform in the future, provided it supports multi-agent routing.
+- **Bring Your Own Key (BYOK) & Zero-Cost Scaling:** The Center Server operates as a stateless, multi-tenant SaaS middleware. Connected platforms must provide their own API keys dynamically (e.g., via HTTP headers) for each request. This ensures infinite scalability, zero centralized API token costs, and strict security isolation per platform.
 - **Graceful Degradation:** Platform Agents can utilize alternative platforms or local models. If a platform lacks support for a specific agent type or modality, the overall system will not crash; it will continue to function normally with those specific unsupported features gracefully disabled or bypassed.
-- **State Independence:** The Center Server does not store platform-specific states or execute local tools. All client-side context remains strictly isolated on the Platform Agent.
+- **State Independence & Data Persistence:** The Center Server acts exclusively as a routing gateway and does not retain or store any data. Consequently, each connected platform must implement and manage its own logic for data saving, memory, and state persistence locally.
 - **Fail-Safe Routing:** The central system includes auto-retry logic and dynamic endpoint switching to automatically handle provider limits or errors without interrupting the user experience.
 
 ## 📚 Directory Index
